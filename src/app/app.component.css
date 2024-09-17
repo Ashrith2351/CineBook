@@ -1,0 +1,41 @@
+/* Navbar styling with gradient background */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #1f1f1f, #333);
+  padding: 15px 30px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand h1 {
+  font-size: 36px;
+  margin: 0;
+  color: #fff;
+  letter-spacing: 2px;
+  font-family: 'Cinzel', serif; /* Add a cinematic font */
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffcc00; /* Highlighted hover effect */
+}
+
+/* Responsive Design for Navbar */
+@media (max-width: 768px) {
+  .navbar-brand h1 {
+    font-size: 28px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+}
