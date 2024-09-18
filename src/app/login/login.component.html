@@ -1,0 +1,55 @@
+<div class="login-container">
+    <h2>Login to Cinebook</h2>
+  
+    <!-- Login Form -->
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" formControlName="email" placeholder="Enter your email" />
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-message">
+          * Email must end with @"Something".com
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" placeholder="Enter your password" />
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
+          * Password must be at least 8 characters, contain a number, and a special character
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+  
+    <!-- Option to Create Account -->
+    <div class="create-account">
+      <p>Don't have an account?</p>
+      <button (click)="switchToRegister()">Create Account</button>
+    </div>
+  
+    <!-- Register Form -->
+    <div *ngIf="isRegistering">
+      <h2>Create Account</h2>
+      <form (ngSubmit)="onRegisterSubmit()" [formGroup]="registerForm">
+        <div class="form-group">
+          <label for="registerEmail">Email</label>
+          <input type="text" id="registerEmail" formControlName="email" placeholder="Enter your email" />
+          <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error-message">
+            * Email must end with @"Something".com
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="registerPassword">Password</label>
+          <input type="password" id="registerPassword" formControlName="password" placeholder="Enter your password" />
+          <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error-message">
+            * Password must be at least 8 characters, contain a number, and a special character
+          </div>
+        </div>
+  
+        <button type="submit" [disabled]="registerForm.invalid">Create Account</button>
+      </form>
+    </div>
+  </div>
+  
